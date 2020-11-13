@@ -1,16 +1,14 @@
 package DataBase;
 
-import DataBase.Job;
-
 @Entity
-public class User {
+public class Member {
     @Id
     @GeneratedValue
     private Long id;
 
     private List<DataBase.Job> Job;
 
-    private User_Classification User_Classification;
+    private Member_Classification Member_Classification;
 
     @Email(message = "Please provide a valid e-mail.")
     @NotEmpty(message = "Please provide an e-mail.")
@@ -47,9 +45,9 @@ public class User {
         this.password = password;
     }
 
-    public User_Classification getUser_Classification() { return User_Classification; }
-    public void User_Classification(User_Classification User_Classification) {
-        this.User_Classification = User_Classification; }
+    public Member_Classification getUser_Classification() { return Member_Classification; }
+    public void User_Classification(Member_Classification Member_Classification) {
+        this.Member_Classification = Member_Classification; }
 
     public String getPhone_No() { return Phone_No; }
     public void setPhone_No(String Phone_No) {

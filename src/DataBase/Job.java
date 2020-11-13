@@ -1,14 +1,12 @@
 package DataBase;
 
-import DataBase.Book;
-
 @Entity
 public class Job {
     @Id
     @GeneratedValue
     private Long Id;
 
-    private User User;
+    private Member Member;
     private DataBase.Book Book;
     private Job_Status Job_Status;
 
@@ -20,12 +18,12 @@ public class Job {
         this.id = id;
     }
 
-    public User getUser() {
-        return User;
+    public Member getUser() {
+        return Member;
     }
 
-    public void setUser(User User) {
-        this.User = User;
+    public void setUser(Member Member) {
+        this.Member = Member;
     }
 
     public Book getBook() {
