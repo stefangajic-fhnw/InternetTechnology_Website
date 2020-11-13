@@ -8,6 +8,4 @@ public interface MemberRespository extends JpaRepository<Member, Long> {
     Member findByPhoneNo(String PhoneNo);
     Member findByJob_ID(Integer Job_ID);
     Member findById(Long Id);
-
-
 }
