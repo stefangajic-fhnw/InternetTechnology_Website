@@ -2,6 +2,7 @@ package DataBase;
 
 @Entity
 public class Member {
+    // "Member" now standard
     @Id
     @GeneratedValue
     private Long id;
@@ -45,8 +46,8 @@ public class Member {
         this.password = password;
     }
 
-    public Member_Classification getUser_Classification() { return Member_Classification; }
-    public void User_Classification(Member_Classification Member_Classification) {
+    public Member_Classification getMember_Classification() { return Member_Classification; }
+    public void Member_Classification(Member_Classification Member_Classification) {
         this.Member_Classification = Member_Classification; }
 
     public String getPhone_No() { return Phone_No; }

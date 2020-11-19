@@ -4,6 +4,7 @@ import DataBase.Author;
 
 @Entity
 public class Book {
+    // "Member" now standard
     @Id
     @GeneratedValue
     private Long Id;

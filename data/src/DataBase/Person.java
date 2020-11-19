@@ -4,6 +4,7 @@ import DataBase.Institute;
 
 @Entity
 public class Person {
+    // "Member" now standard
     @Id
     @GeneratedValue
     private Long id;

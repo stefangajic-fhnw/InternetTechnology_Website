@@ -2,6 +2,7 @@ package DataBase;
 
 @Entity
 public class Institute {
+    // "Member" now standard
     @Id
     @GeneratedValue
     private Long Id;
@@ -29,8 +30,7 @@ public class Institute {
     public String getLegal_Notice() {
         return Legal_Notice;
     }
-    public void setLegal_Notice(Sting Legal_Notice) {
-        this.Legal_Notice = Legal_Notice; }
+    public void setLegal_Notice(Sting Legal_Notice) { this.Legal_Notice = Legal_Notice; }
 
     public String getName() {
         return Name;

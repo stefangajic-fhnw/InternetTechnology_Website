@@ -5,6 +5,7 @@ import DataBase.Institute;
 
 @Entity
 public class Location {
+    // "Member" now standard
     @Id
     @GeneratedValue
     private Long Id;
@@ -90,7 +91,4 @@ public class Location {
     public void setCorrespodence(Person Correspodence) {
         this.Correspodence = Correspodence;
     }
-
-
-
 }

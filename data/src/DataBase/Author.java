@@ -11,6 +11,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Author {
+    // "Member" now standard
 
     @Id
     @GeneratedValue

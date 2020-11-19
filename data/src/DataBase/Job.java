@@ -2,6 +2,7 @@ package DataBase;
 
 @Entity
 public class Job {
+    // "Member" now standard
     @Id
     @GeneratedValue
     private Long Id;
@@ -18,11 +19,11 @@ public class Job {
         this.id = id;
     }
 
-    public Member getUser() {
+    public Member getMember() {
         return Member;
     }
 
-    public void setUser(Member Member) {
+    public void setMember(Member Member) {
         this.Member = Member;
     }
 
