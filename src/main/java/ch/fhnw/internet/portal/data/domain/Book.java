@@ -21,6 +21,7 @@ public class Book {
     @ManyToMany
     private List<Author> authors;
 
+
     public Long getId() {
         return id;
     }

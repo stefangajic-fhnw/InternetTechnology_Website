@@ -13,7 +13,7 @@ public class Person {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToMany
+    @OneToMany
     private List<Institute> institutes;
     private String name;
     private String firstName;
