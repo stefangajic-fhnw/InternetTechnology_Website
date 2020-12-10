@@ -17,7 +17,7 @@ public class  Java_DB_Stefan_Use_Cases{
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = null;
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/semester03_internet_technology_website", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:8080/semester03_internet_technology_website", "root", "");
             System.out.print("Database is connected!        ");
 
 
@@ -29,18 +29,36 @@ public class  Java_DB_Stefan_Use_Cases{
 
             while (rs.next()){
                 rs1 = rs.getString(1) ;
-
             }
-
             conn.close();
         } catch (Exception e) {
             System.out.print("Do not connect to DB - Error:" + e);
         }
-
         System.out.println(rs1);
-
     }
-
 }
 
 
+    // UC 5.1 --> Accesses book, "display" not implemented yet
+    public void AccessBook(Integer idE) {
+        String query = "select * from book where id ="+idE+";";
+
+    }
+    // UC 6 --> takes attributes that remain the same as null values, id can not be changed!
+    // Ahsan's password change has to be added here
+    public void updateMember (integer idE, string phoneN, sting emailN, role roleN){
+        if (role != null) {  // changes only role if different
+            String query = "UPDATE member SET role ='"+ roleN + "' WHERE id ='"+ idE+"';";
+        }
+        if (phoneN != null){
+            String query = "UPDATE member SET phone='"+phoneN +"' WHERE id="+idE+"';";
+        }
+        if(emailN != null){
+            String query = "UPDATE member SET email ='"+ emailN + "' WHERE id '"+ idE+"';";
+        }
+    }
+    // UC 8 --> Id needed
+    public void deleteMember (integer idE){
+        String query = "delete from member where id='" + idE +"';";
+
+    }

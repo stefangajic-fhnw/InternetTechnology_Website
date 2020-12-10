@@ -1,4 +1,4 @@
-package ch.fhnw.internet.portal.UserStories.Stefan;
+package ch.fhnw.internet.portal.UserStories.Stefan.Java_DB_Stefan_Use_Case;
 
 
 import java.math.*;
