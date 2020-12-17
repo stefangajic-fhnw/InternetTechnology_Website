@@ -25,30 +25,30 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><img><a class="navbar-brand" href="index.html">FHNW Book Portal</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button><a class="btn btn-primary ml-auto" role="button" href="search.html">Search books</a>
-            <div
-                class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" href="index.html">Sign out</a></div>
+        <div class="container"><img src="assets/img/FHNWlogo.png" width="60"><a class="navbar-brand" href="index.html" style="margin-left: 15px;font-size: 12px;margin-right: 10px;">FHNW Book Portal</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary text-nowrap ml-auto" role="button" href="index.html" style="font-size: 10px;">Sign out</a></div>
         </div>
     </nav>
     <div class="container profile profile-view" id="profile">
         <div class="row">
             <div class="col-md-12 alert-col relative">
-                <h2 class="text-center">Edit your profile below</h2>
+                <h3 class="text-center">Edit your profile below</h3>
             </div>
         </div>
         <form>
             <div class="form-row profile-row">
                 <div class="col-md-4 relative">
-                    <div class="avatar-bg center"></div><input type="file" class="form-control" name="choose-file" required="" accept="image/*"></div>
+                    <div class="avatar-bg center"></div><input type="file" class="form-control" name="choose-file" required="" accept="image/*" style="font-size: 10px;">
+                </div>
                 <div class="col-md-8">
                     <h1>Profile </h1>
                     <hr>
                     <div class="form-row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname"></div>
+                            <div class="form-group"><label>First name </label><input class="form-control" type="text" name="firstname"></div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Lastname </label><input class="form-control" type="text" name="lastname"></div>
+                            <div class="form-group"><label>Last name </label><input class="form-control" type="text" name="lastname"></div>
                         </div>
                     </div>
                     <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" name="email"></div>
@@ -89,6 +89,7 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/smart-forms.min.js"></script>
     <script src="assets/js/Profile-Edit-Form.js"></script>
 </body>
 

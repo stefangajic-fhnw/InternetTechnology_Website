@@ -17,13 +17,13 @@ public class  Java_DB_Stefan_Use_Cases{
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = null;
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:8080/semester03_internet_technology_website", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/semester03_internet_technology_website", "root", "");
             System.out.print("Database is connected!        ");
 
 
 
 
-            String qry =  "Select * from book;";
+            String qry =  "Select * from author;";
             Statement smt = conn.createStatement();
             ResultSet rs = smt.executeQuery(qry);
 
@@ -38,12 +38,6 @@ public class  Java_DB_Stefan_Use_Cases{
     }
 }
 
-
-    // UC 5.1 --> Accesses book, "display" not implemented yet
-    public void AccessBook(Integer idE) {
-        String query = "select * from book where id ="+idE+";";
-
-    }
     // UC 6 --> takes attributes that remain the same as null values, id can not be changed!
     // Ahsan's password change has to be added here
     public void updateMember (integer idE, string phoneN, sting emailN, role roleN){
@@ -62,3 +56,5 @@ public class  Java_DB_Stefan_Use_Cases{
         String query = "delete from member where id='" + idE +"';";
 
     }
+
+
