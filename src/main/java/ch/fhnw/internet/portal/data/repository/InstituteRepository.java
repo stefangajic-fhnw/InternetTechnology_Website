@@ -6,12 +6,19 @@
 package ch.fhnw.internet.portal.data.repository;
 
 import ch.fhnw.internet.portal.data.domain.Institute;
+import ch.fhnw.internet.portal.data.domain.Location;
+import ch.fhnw.internet.portal.data.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 @Repository
 public interface InstituteRepository extends JpaRepository<Institute, Long> {
-	Institute findByName(String name);
-	Institute findByHead_Id(Long Id);
+	Institute findById(Integer id);
+	List<Institute> findByName(String name);
+	List<Institute> findByHead(Person head);
+	Institute findByLocation(Location location);
+	List<Institute> findByLegalNotice(String LegalNotice);
 }
