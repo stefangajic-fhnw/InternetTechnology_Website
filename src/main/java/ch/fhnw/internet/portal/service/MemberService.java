@@ -6,6 +6,7 @@
 package ch.fhnw.internet.portal.service;
 
 import ch.fhnw.internet.portal.data.domain.Member;
+import ch.fhnw.internet.portal.data.domain.Role;
 import ch.fhnw.internet.portal.data.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -40,5 +41,18 @@ public class MemberService {
     public Member getCurrentAgent() {
         String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return memberRepository.findByEmail(userEmail);
+    }
+    public void deleteMember(@Valid Member member) throws Exception {
+        if (member.getId() == null) {
+            if (memberRepository.findByEmail(member.getEmail()) != null) {
+                throw new Exception("Email address " + member.getEmail() + " already assigned another member.");
+            }
+        }
+        memberRepository.delete(member);
+    }
+    public void updateMember(Member member, String emailN, String phoneN, Role roleN, String passwordN){
+        // no clue how this should work?
+
+
     }
 }
