@@ -5,7 +5,6 @@
 
 package ch.fhnw.internet.portal.data.repository;
 
-import ch.fhnw.internet.portal.data.domain.Institute;
 import ch.fhnw.internet.portal.data.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -19,6 +18,6 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	List<Person> findByName(String name);
 	List<Person> findByNameAndFirstName(String name, String firstName);
 	List<Person> findByLegalNotice(String legalNotice);
-	List<Person> findByInstitute(Institute institute);
+	// List<Person> findPersonsByInstitute(Institute institute);
 
 }

@@ -29,8 +29,8 @@ public class MemberService {
     private PasswordEncoder passwordEncoder;
 
     public void saveAgent(@Valid Member member) throws Exception {
-        if (member.getId() == null) {
-            if (memberRepository.findByEmail(member.getEmail()) != null) {
+        if (member.getID() == null) {
+            if (memberRepository.findMemberByEmail(member.getEmail()) != null) {
                 throw new Exception("Email address " + member.getEmail() + " already assigned another member.");
             }
         }
@@ -40,11 +40,11 @@ public class MemberService {
 
     public Member getCurrentAgent() {
         String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return memberRepository.findByEmail(userEmail);
+        return memberRepository.findMemberByEmail(userEmail);
     }
     public void deleteMember(@Valid Member member) throws Exception {
-        if (member.getId() == null) {
-            if (memberRepository.findByEmail(member.getEmail()) != null) {
+        if (member.getID() == null) {
+            if (memberRepository.findMemberByEmail(member.getEmail()) != null) {
                 throw new Exception("Email address " + member.getEmail() + " already assigned another member.");
             }
         }

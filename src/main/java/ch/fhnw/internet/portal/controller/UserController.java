@@ -54,7 +54,7 @@ public class UserController {
     @PutMapping("/profile")
     public ResponseEntity<Void> putProfile(@RequestBody Member member) {
         try {
-            member.setId(memberService.getCurrentAgent().getId());
+            member.setID(memberService.getCurrentAgent().getID());
             memberService.saveAgent(member);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());

@@ -17,7 +17,7 @@ public class Member {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer ID;
 	@Email(message = "Please provide a valid e-mail.")
 	@NotEmpty(message = "Please provide an e-mail.")
 	private String email;
@@ -29,12 +29,12 @@ public class Member {
 	@Enumerated(EnumType.STRING)
 	private Role role;
 
-	public Long getId() {
-		return id;
+	public Integer getID() {
+		return ID;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setID(Integer ID) {
+		this.ID = ID;
 	}
 
 	public String getEmail() {
