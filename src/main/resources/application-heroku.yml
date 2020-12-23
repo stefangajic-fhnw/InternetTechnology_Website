@@ -5,12 +5,12 @@ spring:
     password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     properties:
-      hibernate:
+      // hibernate:
         jdbc:
           lob:
             non_contextual_creation: true
-    hibernate:
-      ddl-auto: update
+    /* hibernate:
+      ddl-auto: update */
 
 security:
   token:
