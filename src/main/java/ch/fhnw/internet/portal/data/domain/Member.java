@@ -15,67 +15,67 @@ import java.util.List;
 @Entity
 public class Member {
 
-	@Id
-	@GeneratedValue
-	private Integer ID;
-	@Email(message = "Please provide a valid e-mail.")
-	@NotEmpty(message = "Please provide an e-mail.")
-	private String email;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // only create object property from JSON
-	private String password;
-	private String phone;
-	@OneToMany(mappedBy = "member")
-	private List<Job> jobs;
-	@Enumerated(EnumType.STRING)
-	private Role role;
+    @Id
+    @GeneratedValue
+    private Integer id;
+    @Email(message = "Please provide a valid e-mail.")
+    @NotEmpty(message = "Please provide an e-mail.")
+    private String email;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // only create object property from JSON
+    private String password;
+    private String phone;
+    @OneToMany(mappedBy = "member")
+    private List<Job> jobs;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
-	public Integer getID() {
-		return ID;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setID(Integer ID) {
-		this.ID = ID;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getPassword() {
-		String transientPassword = this.password;
-		this.password = null;
-		return transientPassword;
-	}
+    public String getPassword() {
+        String transientPassword = this.password;
+        this.password = null;
+        return transientPassword;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public List<Job> getJobs() {
-		return jobs;
-	}
+    public List<Job> getJobs() {
+        return jobs;
+    }
 
-	public void setJobs(List<Job> jobs) {
-		this.jobs = jobs;
-	}
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
+    }
 
-	public Role getRole() {
-		return role;
-	}
+    public Role getRole() {
+        return role;
+    }
 
-	public void setRole(Role role) {
-		this.role = role;
-	}
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

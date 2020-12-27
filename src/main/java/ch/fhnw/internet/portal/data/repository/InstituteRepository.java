@@ -12,9 +12,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InstituteRepository extends JpaRepository<Institute, Long> {
-	Institute findById(Integer id);
-	// List<Institute> findByName(String name);
-	// List<Institute> findByHead(Person head);
-	// Institute findByLocation(Location location);
-	// List<Institute> findByLegalNotice(String LegalNotice);
+    Institute findById(Integer id);
+    // List<Institute> findByName(String name);
+    // List<Institute> findByHead(Person head);
+    // Institute findByLocation(Location location);
+    // List<Institute> findByLegalNotice(String LegalNotice);
 }

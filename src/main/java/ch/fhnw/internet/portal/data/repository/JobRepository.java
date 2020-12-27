@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface JobRepository extends JpaRepository<Job, Long> {
-	// List<Job> findByBook(Book book);
-	// List<Job> findByMember(Member member);
-	// Job findById(Integer id);
-	// List<Job> findByJobStatus(JobStatus jobStatus);
+    // List<Job> findByBook(Book book);
+    // List<Job> findByMember(Member member);
+    // Job findById(Integer id);
+    // List<Job> findByJobStatus(JobStatus jobStatus);
 }

@@ -14,10 +14,13 @@ import java.util.List;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
-	Person findById(Integer id);
-	List<Person> findByName(String name);
-	List<Person> findByNameAndFirstName(String name, String firstName);
-	List<Person> findByLegalNotice(String legalNotice);
-	// List<Person> findPersonsByInstitute(Institute institute);
+    Person findById(Integer id);
+
+    List<Person> findByName(String name);
+
+    List<Person> findByNameAndFirstName(String name, String firstName);
+
+    List<Person> findByLegalNotice(String legalNotice);
+    // List<Person> findPersonsByInstitute(Institute institute);
 
 }

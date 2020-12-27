@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(path = "/")
 public class IndexController {
-// Comment
+    // Comment
     @GetMapping
-    public static String getIndexView(){
+    public static String getIndexView() {
 
         return "index.html";
     }

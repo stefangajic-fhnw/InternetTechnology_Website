@@ -71,7 +71,7 @@ public class Book {
     }
 
     public void addAuthor(Author author) {
-        if(authors==null)
+        if (authors == null)
             authors = new ArrayList<>();
         authors.add(author);
     }

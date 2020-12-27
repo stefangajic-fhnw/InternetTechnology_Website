@@ -1,12 +1,6 @@
-/*
- * Copyright (c) 2020. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
- * All rights reserved.
- */
-
 package ch.fhnw.internet.portal.service;
 
 import ch.fhnw.internet.portal.data.domain.Member;
-import ch.fhnw.internet.portal.data.domain.Role;
 import ch.fhnw.internet.portal.data.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,37 +16,45 @@ import javax.validation.Validator;
 public class MemberService {
 
     @Autowired
-    private MemberRepository memberRepository;
-    @Autowired
     Validator validator;
+    @Autowired
+    private MemberRepository memberRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public void saveAgent(@Valid Member member) throws Exception {
-        if (member.getID() == null) {
+    public Member saveMember(@Valid Member member) throws Exception {
+        if (member.getId() == null) {
             if (memberRepository.findMemberByEmail(member.getEmail()) != null) {
-                throw new Exception("Email address " + member.getEmail() + " already assigned another member.");
+                throw new Exception("Email address " + member.getEmail() + " already assigned another Member.");
             }
+        } else if (memberRepository.findByEmailAndIdNot(member.getEmail(), member.getId()) != null) {
+            throw new Exception("Email address " + member.getEmail() + " already assigned another Member.");
         }
         member.setPassword(passwordEncoder.encode(member.getPassword()));
-        memberRepository.save(member);
+        return memberRepository.save(member);
     }
 
-    public Member getCurrentAgent() {
-        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return memberRepository.findMemberByEmail(userEmail);
+    public Member getCurrentMember() {
+        String memberEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return memberRepository.findMemberByEmail(memberEmail);
     }
+
     public void deleteMember(@Valid Member member) throws Exception {
-        if (member.getID() == null) {
+        if (member.getId() == null) {
             if (memberRepository.findMemberByEmail(member.getEmail()) != null) {
                 throw new Exception("Email address " + member.getEmail() + " already assigned another member.");
             }
         }
         memberRepository.delete(member);
     }
-    public void updateMember(Member member, String emailN, String phoneN, Role roleN, String passwordN){
-        // no clue how this should work?
 
-
+    public void updateMember(Member member) {
+        // no clue how this should work? (Message from Stefan)
+        Member existingMember = memberRepository.findById(member.getId());
+        existingMember.setEmail(member.getEmail());
+        existingMember.setPhone(member.getPhone());
+        existingMember.setRole(member.getRole());
+        existingMember.setPassword(member.getPassword()); //I don't know this is allowed or not
     }
+
 }

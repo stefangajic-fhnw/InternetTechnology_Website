@@ -40,7 +40,7 @@ public class Author {
     }
 
     public void addBook(Book book) {
-        if(books==null)
+        if (books == null)
             books = new ArrayList<>();
         books.add(book);
     }
@@ -82,7 +82,7 @@ public class Author {
     }
 
     public void addInstitute(Institute institute) {
-        if(institutes==null)
+        if (institutes == null)
             institutes = new ArrayList<>();
         institutes.add(institute);
     }
